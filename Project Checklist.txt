@@ -1,0 +1,34 @@
+Description and Checklist of Zombie Survival Project
+
+*This Document will be updated as needed*
+
+You play as a survivor that must go into each building and find supplies before escaping the map. There will be zombies on the map scattered around that will try and attack you when you enter their radius. There will also be zombies that spawn off the map and know where you are at and head straight for you. You have a rifle that only fires every ~.5 seconds, and scattered around the map are a couple of grenades you can pick up to use against the zombies. Be careful: if a zombie touches you, you instantly die, and your own grenades can kill you as well. Below is a checklist of every feature that must be in the game in order for the project to be considered "complete."
+
+1) Player must move with WASD while always looking at the mouse location.
+2) Left click should shoot a bullet that only travels a short distance before it queue_free() if it doesn't hit a zombie or wall first.
+3) Player should only be able to shoot once every (approximately) .5 seconds.
+4) If player has grenades, play should be able to right click to throw grenade.
+5) Player grenade should explode after 3 seconds of being thrown. If player or zombie is in blast radius on explosion, they should die. Explosion should not work through walls.
+6) Player grenade should bounch off of walls and slow down with every bounce.
+7) Grenade must play animation for explosion using explosion frames provided (explosion should be its own scene).
+8) On player death, player must be replaced with corpse.
+9) On zombie death, zombie must be replaced with blood splatter.
+10) Game must start with a main menu with a "Play" button and a "Quit" button. Both buttons should have "pressed down" effect when clicked. [This is all using KenneyUI]
+11) Mouse cursor must be replaced with green crosshair after pressing "Play". 
+12) Pressing escape during game should pause the game and bring up a menu asking to "Resume," "Quit to Menu," or "Quit to Desktop" with proper functionality.
+13) The in-game ui should show 0/5 for supplies gathered and how many grenades the player currently has.
+14) Once supplies have been gathered, player must return to spawn location to exit the map and win.
+15) Upon player death, two buttons should pop up to either "Try Again" (and restart the level), or "Quit" (which takes you back to main menu)
+16) Upon winning, game should show victory screen and tell you how long it took you to complete the level and how many zombies you killed
+17) Zombies should be stationary around the map at fixed spawn locations. These zombies should have detection radius that is half the screen. They should not be able to detect through walls. Upon entering their detection radius, they should run at player to kill or be killed.
+18) There should be a handful of off-screen spawns for zombies. These zombies should know where player is at and automatically run straight for him.
+19) Upon instantiation, zombies should be given a random speed from shuffle walk to all out sprint.
+20) Zombies should have walking animation.
+21) There should only be 3 grenades per map, and 5 supplies per map. Both should be placed in random locations each time the level is played.
+22) There should be sound effects for player dying, zombies dying, grenades going off, and items being picked up.
+23) The longer the player is in the game, the faster zombies should spawn.
+
+Style Guide
+* All non-constant variables should be snake_casing
+* All @onready variables that are referencing a child node should be PascalCasing
+* All self-made Functions() should be Pascal Casing
